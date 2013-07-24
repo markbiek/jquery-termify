@@ -4,6 +4,9 @@
     $(document).ready( function() {
         $(document).data('head', $('head').html());
         $(document).data('body', $('body').html());
+        $(document).data('term', false);
+        $(document).data('no-term', true);
+
         process();
     });
 
@@ -14,7 +17,7 @@
         var w = $(window).width();
         var h = $(window).height();
 
-        if(w <= 664 && h <= 405) {
+        if(w <= 664 || h <= 405) {
             if(!$(document).data('term')) {
                 $(document).data('term', true);
                 $(document).data('no-term', false);
@@ -63,11 +66,12 @@
                 if(!$(document).data('no-term')) {
                     $(document).data('no-term', true);
                     $(document).data('term', false);
-                    $('head').empty();
+                    /*$('head').empty();
                     $('body').empty();
                     $('head').html($(document).data('head'));
-                    $('body').html($(document).data('body'));
+                    $('body').html($(document).data('body'));*/
                     console.log('no term!');
+                    window.location = window.location.href;
                 }
             }
         }
