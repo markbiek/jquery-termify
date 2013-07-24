@@ -42,6 +42,12 @@
                 $('#goog-gt-tt').remove();
 
                 //Set up new styles
+                $('html,body,div').css({
+                    'margin': '0',
+                    'padding': '0',
+                    'overflow': 'hidden'
+                });
+                $('body').css('padding', '10px');
                 $('div,p,a,li,h1,h2,h3,h4,h5').css({
                     'font-size': '14px',
                     'color': '#06ef00'
@@ -49,6 +55,7 @@
                 $('body,div').css({
                     'background': 'black'
                 });
+                $('body').css('border', '5px solid #ccc');
             }
         }else {
             //Make sure we don't restore the html for every resize, just the first one
